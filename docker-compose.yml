@@ -1,0 +1,73 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "${YOUR_FRONTEND_PORT:-12012}:80"
+    environment:
+      - VITE_API_BASE=/api
+      - VITE_WS_BASE=/ws
+    depends_on:
+      - backend
+    networks:
+      - typeflow_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgresql+psycopg://typeflow:mabuchi_0315@db:5432/typeflow
+      - REDIS_URL=redis://redis:6379/0
+      - JWT_SECRET=${JWT_SECRET:-f3a3fe96ebd8d643c3a14e35d9996d2a71f7692b9f00995a06ceae33ff291985}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - OAUTH_REDIRECT_URI=${OAUTH_REDIRECT_URI:-https://typeflow.serelix.xyz/auth/callback}
+      - RATE_LIMIT_PER_MIN=${RATE_LIMIT_PER_MIN:-120}
+      - ADMIN_EMAIL=admin@typeflow.local,zengcode0315@gmail.com
+      - ADMIN_PASSWORD=mabuchi_0315
+      - ALLOWED_ORIGINS=["https://typeflow.serelix.xyz","http://localhost:12012","http://localhost:5173"]
+    depends_on:
+      - db
+      - redis
+    restart: unless-stopped
+    networks:
+      - typeflow_network
+    command: >-
+      sh -c "uvicorn app.main:app --host 0.0.0.0 --port 80"
+
+  db:
+    image: postgres:15-alpine
+    ports:
+      - "${YOUR_DB_PORT:-12016}:5432"
+    environment:
+      - POSTGRES_USER=typeflow
+      - POSTGRES_PASSWORD=mabuchi_0315
+      - POSTGRES_DB=typeflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+    networks:
+      - typeflow_network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "${YOUR_REDIS_PORT:-12018}:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - typeflow_network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  typeflow_network:
+    driver: bridge

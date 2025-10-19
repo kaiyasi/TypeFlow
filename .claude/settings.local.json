@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker-compose up:*)",
+      "Bash(npm run build:*)",
+      "Bash(docker ps:*)",
+      "Bash(curl -s http://localhost:12012/api/v1/articles)",
+      "Bash(docker exec typeflow-db-1 psql -U typeflow -d typeflow -c \"DELETE FROM articles WHERE title IN (''dsf'', ''dfsff'', ''test'');\")",
+      "Bash(docker exec typeflow-db-1 psql -U typeflow -d typeflow -c \"\nWITH articles_to_delete AS (\n  SELECT id FROM articles WHERE title IN (''dsf'', ''dfsff'', ''test'')\n)\nDELETE FROM article_revisions WHERE article_id IN (SELECT id FROM articles_to_delete);\n\")",
+      "Bash(docker logs typeflow-backend-1 --tail 20)",
+      "Bash(docker-compose stop backend)",
+      "Bash(docker-compose build backend --no-cache)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

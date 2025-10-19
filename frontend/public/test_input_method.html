@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中文輸入法檢測測試</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        .warning {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: none;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .valid {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .invalid {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 TypeFlow 中文輸入法檢測測試</h1>
+        <p><strong>說明：</strong>這個測試頁面模擬 TypeFlow 的輸入法檢測功能，幫助您了解系統如何處理不同的輸入方式。</p>
+        
+        <div class="test-section">
+            <h3>📝 英文模式測試</h3>
+            <p>當選擇英文練習時，系統只允許 ASCII 字符（英文字母、數字、符號）</p>
+            <input type="text" id="englishInput" placeholder="請在此輸入字符進行測試...">
+            <div id="englishStatus" class="status"></div>
+            <button class="button" onclick="setLanguage('en')">設定為英文模式</button>
+        </div>
+
+        <div class="test-section">
+            <h3>🇹🇼 中文模式測試</h3>
+            <p>當選擇中文練習時，系統允許中文字符、英文字符和常用標點符號</p>
+            <input type="text" id="chineseInput" placeholder="請在此輸入字符進行測試...">
+            <div id="chineseStatus" class="status"></div>
+            <button class="button" onclick="setLanguage('zh-TW')">設定為中文模式</button>
+        </div>
+
+        <div class="test-section">
+            <h3>💻 程式碼模式測試</h3>
+            <p>程式碼模式與英文模式相同，只允許 ASCII 字符</p>
+            <input type="text" id="codeInput" placeholder="請在此輸入字符進行測試...">
+            <div id="codeStatus" class="status"></div>
+            <button class="button" onclick="setLanguage('code')">設定為程式碼模式</button>
+        </div>
+
+        <div id="globalWarning" class="warning">
+            <span id="warningText"></span>
+            <button onclick="dismissWarning()" style="float: right; background: none; border: none; color: white; font-size: 18px; cursor: pointer;">×</button>
+        </div>
+
+        <div class="test-section">
+            <h3>🧪 測試用例</h3>
+            <p>點擊下方按鈕快速測試不同字符：</p>
+            <button class="button" onclick="testCharacter('Hello')">測試: Hello</button>
+            <button class="button" onclick="testCharacter('你好')">測試: 你好</button>
+            <button class="button" onclick="testCharacter('console.log()')">測試: console.log()</button>
+            <button class="button" onclick="testCharacter('αβγ')">測試: 希臘字母</button>
+            <button class="button" onclick="testCharacter('こんにちは')">測試: 日文</button>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'en';
+        let warningDismissed = false;
+
+        // 輸入法檢測函數 (來自 TypeFlow)
+        function detectInputMethod(inputChar, expectedChar) {
+            if (currentLanguage === 'en' || currentLanguage === 'code') {
+                // 英文/程式碼：僅允許 ASCII 可見字符
+                const englishRegex = /^[\x20-\x7E]$/
+                return englishRegex.test(inputChar)
+            }
+            
+            if (currentLanguage === 'zh-TW' || currentLanguage === 'zh-CN') {
+                // 中文：允許中文字符、ASCII 和常用標點符號
+                const chineseRegex = /^[\u4e00-\u9fff\u3000-\u303f\uff00-\uffef\x20-\x7E]$/
+                return chineseRegex.test(inputChar)
+            }
+            
+            // 其他語言：寬鬆檢測
+            return true
+        }
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            warningDismissed = false;
+            updateAllInputs();
+            console.log('Language set to:', lang);
+        }
+
+        function updateStatus(inputId, statusId, text) {
+            const statusDiv = document.getElementById(statusId);
+            let allValid = true;
+            let invalidChars = [];
+
+            for (let char of text) {
+                if (!detectInputMethod(char, '')) {
+                    allValid = false;
+                    if (!invalidChars.includes(char)) {
+                        invalidChars.push(char);
+                    }
+                }
+            }
+
+            if (allValid && text.length > 0) {
+                statusDiv.className = 'status valid';
+                statusDiv.textContent = '✅ 所有字符都符合當前語言模式';
+            } else if (text.length === 0) {
+                statusDiv.className = 'status';
+                statusDiv.textContent = '等待輸入...';
+            } else {
+                statusDiv.className = 'status invalid';
+                statusDiv.textContent = `❌ 不符合的字符: ${invalidChars.join(', ')}`;
+                
+                if (!warningDismissed) {
+                    showWarning();
+                }
+            }
+        }
+
+        function showWarning() {
+            const warning = document.getElementById('globalWarning');
+            const warningText = document.getElementById('warningText');
+            
+            if (currentLanguage === 'en' || currentLanguage === 'code') {
+                warningText.textContent = 'Please switch to English input method to continue typing';
+            } else if (currentLanguage === 'zh-TW') {
+                warningText.textContent = '請切換至正確的輸入法以繼續打字';
+            } else {
+                warningText.textContent = 'Please use the correct input method for this language';
+            }
+            
+            warning.style.display = 'block';
+        }
+
+        function dismissWarning() {
+            document.getElementById('globalWarning').style.display = 'none';
+            warningDismissed = true;
+        }
+
+        function testCharacter(testString) {
+            // 根據當前語言模式，將測試字符放入相應的輸入框
+            if (currentLanguage === 'en') {
+                document.getElementById('englishInput').value = testString;
+                updateStatus('englishInput', 'englishStatus', testString);
+            } else if (currentLanguage === 'zh-TW') {
+                document.getElementById('chineseInput').value = testString;
+                updateStatus('chineseInput', 'chineseStatus', testString);
+            } else if (currentLanguage === 'code') {
+                document.getElementById('codeInput').value = testString;
+                updateStatus('codeInput', 'codeStatus', testString);
+            }
+        }
+
+        function updateAllInputs() {
+            const englishInput = document.getElementById('englishInput').value;
+            const chineseInput = document.getElementById('chineseInput').value;
+            const codeInput = document.getElementById('codeInput').value;
+
+            updateStatus('englishInput', 'englishStatus', englishInput);
+            updateStatus('chineseInput', 'chineseStatus', chineseInput);
+            updateStatus('codeInput', 'codeStatus', codeInput);
+        }
+
+        // 事件監聽器
+        document.getElementById('englishInput').addEventListener('input', (e) => {
+            updateStatus('englishInput', 'englishStatus', e.target.value);
+        });
+
+        document.getElementById('chineseInput').addEventListener('input', (e) => {
+            updateStatus('chineseInput', 'chineseStatus', e.target.value);
+        });
+
+        document.getElementById('codeInput').addEventListener('input', (e) => {
+            updateStatus('codeInput', 'codeStatus', e.target.value);
+        });
+
+        // 初始化
+        setLanguage('en');
+    </script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+{
+  "nav": {
+    "practice": "Practice",
+    "leaderboard": "Leaderboard", 
+    "submit": "Submit",
+    "group": "Group",
+    "admin": "Admin",
+    "login": "Login",
+    "guest": "Guest",
+    "logout": "Logout"
+  },
+  "home": {
+    "title": "TypeFlow",
+    "description": "Master typing in any language with real-time feedback and comprehensive analytics",
+    "startPractice": "Start Practice",
+    "hero": {
+      "title": "Master Typing in Any Language",
+      "subtitle": "Real-time feedback, comprehensive analytics, and multilingual support",
+      "cta": "Start Practicing"
+    },
+    "pills": {
+      "accuracy": "accuracy",
+      "flow": "flow",
+      "focus": "focus"
+    },
+    "features": {
+      "practice": {
+        "title": "Practice",
+        "description": "Improve your typing speed with diverse practice materials",
+        "cta": "Start a 60s test →"
+      },
+      "compete": {
+        "title": "Compete",
+        "description": "Challenge yourself and climb the leaderboard",
+        "cta": "See today’s ranks →"
+      },
+      "submit": {
+        "title": "Submit Content",
+        "description": "Contribute your own practice articles to the platform",
+        "cta": "Share an article →"
+      },
+      "realtime": {
+        "title": "Real-time Feedback",
+        "description": "Character-by-character feedback with <50ms latency"
+      },
+      "multilingual": {
+        "title": "8 Languages Supported",
+        "description": "English, Code, Chinese, Japanese, Korean, German, Russian"
+      },
+      "analytics": {
+        "title": "Detailed Analytics",
+        "description": "WPM, accuracy, speed curves, keystroke heatmaps"
+      },
+      "leaderboard": {
+        "title": "Global Rankings",
+        "description": "Compete with users worldwide in daily, weekly, monthly rankings"
+      }
+    },
+    "actions": {
+      "viewLeaderboard": "View Leaderboard"
+    }
+  },
+  "practice": {
+    "title": "Typing Practice",
+    "subtitle": "Choose your language and duration to start practicing",
+    "backHome": "Back to Home",
+    "selectLanguage": "Select Language",
+    "selectDuration": "Select Duration",
+    "durations": {
+      "60": "1 minute",
+      "180": "3 minutes", 
+      "300": "5 minutes",
+      "600": "10 minutes"
+    },
+    "start": "Start Practice",
+    "restart": "Restart",
+    "finish": "Finish",
+    "inputMethodWarning": "Please switch to English input method to continue typing",
+    "stats": {
+      "wpm": "WPM",
+      "accuracy": "Accuracy",
+      "time": "Time",
+      "errors": "Errors",
+      "characters": "Characters",
+      "words": "Words"
+    },
+    "quickStats": {
+      "avgWpm": "Avg WPM",
+      "avgAccuracy": "Avg Accuracy",
+      "sessions": "Sessions"
+    },
+    "selection": {
+      "title": "Select Language & Duration",
+      "subtitle": "Choose your preferred language and practice duration",
+      "practiceDuration": "Practice Duration"
+    },
+    "common": { "articles": "articles" },
+    "countdown": {
+      "title": "Get Ready!",
+      "hint": "Position your fingers on the home row"
+    },
+    "actions": { "reset": "Reset", "exit": "Exit Practice" }
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "subtitle": "Top typists from around the world",
+    "scopes": {
+      "title": "Scope",
+      "daily": "Daily",
+      "weekly": "Weekly", 
+      "monthly": "Monthly",
+      "alltime": "All Time"
+    },
+    "categories": {
+      "title": "Category",
+      "overall": "Overall",
+      "en": "English",
+      "code": "Code",
+      "zh-TW": "Traditional Chinese",
+      "zh-CN": "Simplified Chinese",
+      "ko": "Korean",
+      "ja": "Japanese", 
+      "de": "German",
+      "ru": "Russian"
+    },
+    "columns": {
+      "rank": "Rank",
+      "user": "User",
+      "wpm": "WPM",
+      "accuracy": "Accuracy",
+      "date": "Date"
+    }
+  },
+  "submit": {
+    "title": "Submit Article",
+    "subtitle": "Share your favorite texts with the community.",
+    "form": {
+      "title": "Title",
+      "language": "Language",
+      "content": "Content",
+      "source": "Source (optional)",
+      "difficulty": "Difficulty"
+    },
+    "placeholders": {
+      "title": "e.g., The Zen of Python",
+      "source": "https://example.com/article",
+      "content": "Paste or type your article content here for typing practice."
+    },
+    "buttons": {
+      "submit": "Submit for Review",
+      "submitting": "Submitting...",
+      "draft": "Save Draft",
+      "saving": "Saving..."
+    },
+    "tips": {
+      "title": "Submission Tips",
+      "length": "Ideal length is between 100 and 2000 characters.",
+      "suitability": "Ensure content is suitable for typing practice (avoid excessive special characters).",
+      "source": "Providing a source link helps with the review process.",
+      "draft": "You can save a draft at any time and come back later.",
+      "review": "Our moderators will review your submission as soon as possible."
+    },
+    "messages": {
+      "invalidForm": {
+        "title": "Invalid Form",
+        "message": "Please provide a title and content with at least 50 characters."
+      },
+      "submitSuccess": {
+        "title": "Submission Successful!",
+        "message": "Your article has been submitted for review. Thank you for your contribution!"
+      },
+      "submitError": {
+        "title": "Submission Failed",
+        "message": "An unexpected error occurred. Please try again later."
+      },
+      "draftSuccess": {
+        "title": "Draft Saved!",
+        "message": "Your article has been saved as a draft."
+      },
+      "draftError": {
+        "title": "Save Failed",
+        "message": "Please provide a title and content before saving a draft."
+      },
+      "authError": {
+        "title": "Authentication Required",
+        "message": "You must be logged in to submit an article."
+      }
+    },
+    "difficulty": { "easy": "Easy", "medium": "Medium", "hard": "Hard" },
+    "common": {
+      "characters": "characters",
+      "minimum": "Minimum",
+      "public": "Make this article public (visible to all users)",
+      "mySubmissions": "My Submissions"
+    }
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "subtitle": "Manage users, articles, and system settings.",
+    "stats": "Statistics",
+    "stats": {
+      "pending": "Pending Review",
+      "approved": "Approved",
+      "users": "Total Users",
+      "records": "Total Records"
+    },
+    "tabs": {
+      "pending": "Pending Review",
+      "allArticles": "All Articles",
+      "users": "Users",
+      "scores": "Scores"
+    },
+    "sections": {
+      "pending": "Pending Articles",
+      "allArticles": "All Articles"
+    },
+    "search": { "articles": "Search articles..." },
+    "empty": {
+      "noArticles": "No articles found",
+      "noUsers": "No users found",
+      "noScores": "No scores loaded"
+    },
+    "actions": {
+      "viewFull": "View Full",
+      "edit": "Edit",
+      "load": "Load"
+    },
+    "common": { "actions": "Actions", "by": "by" },
+    "users": {
+      "title": "Users",
+      "role": "Role",
+      "records": "Records",
+      "setRole": "Set Role",
+      "emailPlaceholder": "Email (create if not exists)",
+      "roles": { "user": "User", "orgAdmin": "Content Reviewer", "superAdmin": "Super Admin" },
+      "roleUpdated": "Role updated",
+      "roleUpdateFailed": "Failed to update role"
+    },
+    "scores": {
+      "title": "Edit Scores",
+      "userIdPlaceholder": "User ID (UUID)"
+    }
+  },
+  "footer": {
+    "description": "Advanced multi-language typing practice platform",
+    "links": "Links",
+    "documentation": "Documentation",
+    "api": "API Reference",
+    "github": "GitHub"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "page": "Page",
+    "of": "of",
+    "results": "results"
+  }
+  ,
+  "meta": {
+    "title": "TypeFlow - Advanced Multi-Language Typing Practice",
+    "description": "Real-time typing experience with WebSocket-driven instant feedback and comprehensive analytics"
+  }
+  ,
+  "group": {
+    "title": "My Group",
+    "subtitle": "One group per user. All members can view group scores.",
+    "create": {
+      "title": "Create Group",
+      "desc": "Start a new group and become its manager.",
+      "placeholder": "Group name (e.g., Blue Team)",
+      "action": "Create"
+    },
+    "join": {
+      "title": "Join Group",
+      "desc": "Join with a Group ID provided by your manager.",
+      "placeholder": "Enter Group ID (UUID)",
+      "action": "Join"
+    },
+    "info": {
+      "group": "Group",
+      "role": "Role",
+      "groupId": "Group ID"
+    },
+    "actions": { "copy": "Copy", "leave": "Leave Group" },
+    "invite": {
+      "title": "Invite Member",
+      "placeholder": "Student email (Gmail or other)",
+      "action": "Invite"
+    },
+    "leaderboard": {
+      "title": "Group Leaderboard",
+      "mode": "Mode",
+      "modes": { "latest": "Latest", "best": "Best", "average": "Average" },
+      "empty": "No scores yet"
+    },
+    "messages": { "copied": "Group ID copied to clipboard", "invited": "Invitation successful" },
+    "errors": { "invite": "Failed to invite user", "leave": "Failed to leave group" },
+    "confirm": { "leave": "Leave this group?" }
+  }
+}

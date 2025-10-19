@@ -1,0 +1,9 @@
+# Frontend-specific dockerignore
+node_modules/
+dist/
+.vite/
+.cache/
+.eslintcache
+.env.local
+*.log
+

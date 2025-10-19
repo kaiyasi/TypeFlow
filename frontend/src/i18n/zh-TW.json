@@ -1,0 +1,312 @@
+{
+  "nav": {
+    "practice": "練習",
+    "leaderboard": "排行榜",
+    "submit": "投稿",
+    "group": "群組",
+    "admin": "管理",
+    "login": "登入",
+    "guest": "訪客",
+    "logout": "登出"
+  },
+  "home": {
+    "title": "TypeFlow",
+    "description": "多語言打字練習平台，提供即時回饋和全面分析",
+    "startPractice": "開始練習",
+    "hero": {
+      "title": "精通多語言打字技能",
+      "subtitle": "即時回饋、全面分析、多語言支援",
+      "cta": "開始練習"
+    },
+    "pills": {
+      "accuracy": "準確",
+      "flow": "流暢",
+      "focus": "專注"
+    },
+    "features": {
+      "practice": {
+        "title": "練習",
+        "description": "多樣題材循序練習，穩定提升手感與速度",
+        "cta": "先來 60 秒暖身 →"
+      },
+      "compete": {
+        "title": "競賽",
+        "description": "和高手較勁，朝今日榜單前進",
+        "cta": "看看今日排行榜 →"
+      },
+      "submit": {
+        "title": "投稿內容",
+        "description": "分享精選文本，讓更多人練得更好",
+        "cta": "立即分享一篇 →"
+      },
+      "realtime": {
+        "title": "即時回饋",
+        "description": "逐字回饋，延遲低於50毫秒"
+      },
+      "multilingual": {
+        "title": "支援8種語言",
+        "description": "英文、程式碼、中文、日文、韓文、德文、俄文"
+      },
+      "analytics": {
+        "title": "詳細分析",
+        "description": "WPM、準確率、速度曲線、按鍵熱點圖"
+      },
+      "leaderboard": {
+        "title": "全球排名",
+        "description": "與全球用戶競爭日、週、月排行榜"
+      }
+    },
+    "actions": {
+      "viewLeaderboard": "查看排行榜"
+    }
+  },
+  "practice": {
+    "title": "打字練習",
+    "subtitle": "選擇語言與時長，開始你的練習",
+    "backHome": "返回首頁",
+    "selectLanguage": "選擇語言",
+    "selectDuration": "選擇時長",
+    "durations": {
+      "60": "1分鐘",
+      "180": "3分鐘",
+      "300": "5分鐘", 
+      "600": "10分鐘"
+    },
+    "start": "開始練習",
+    "restart": "重新開始",
+    "finish": "結束",
+    "inputMethodWarning": "請切換至英文輸入法以繼續打字",
+    "stats": {
+      "wpm": "每分鐘字數",
+      "accuracy": "準確率",
+      "time": "時間",
+      "errors": "錯誤",
+      "characters": "字符數",
+      "words": "單詞數"
+    },
+    "quickStats": {
+      "avgWpm": "平均 WPM",
+      "avgAccuracy": "平均準確率",
+      "sessions": "練習次數"
+    },
+    "selection": {
+      "title": "選擇語言與時長",
+      "subtitle": "挑選偏好的語言與練習時長",
+      "practiceDuration": "練習時長"
+    },
+    "common": { "articles": "篇文章" },
+    "countdown": {
+      "title": "準備開始",
+      "hint": "將手指放在基準列上"
+    },
+    "actions": { "reset": "重設", "exit": "結束練習" }
+  },
+  "leaderboard": {
+    "title": "排行榜",
+    "subtitle": "聚集各地打字高手的成績榜",
+    "scopes": {
+      "title": "期間",
+      "daily": "日榜",
+      "weekly": "週榜",
+      "monthly": "月榜", 
+      "alltime": "總榜"
+    },
+    "categories": {
+      "title": "分類",
+      "overall": "綜合",
+      "en": "英文",
+      "code": "程式碼",
+      "zh-TW": "繁體中文",
+      "zh-CN": "簡體中文",
+      "ko": "韓文",
+      "ja": "日文",
+      "de": "德文",
+      "ru": "俄文"
+    },
+    "columns": {
+      "rank": "排名",
+      "user": "用戶",
+      "wpm": "WPM",
+      "accuracy": "準確率",
+      "date": "日期"
+    }
+  },
+  "submit": {
+    "title": "投稿文章",
+    "subtitle": "與社群分享你喜愛的文本。",
+    "form": {
+      "title": "標題",
+      "language": "語言",
+      "content": "內容",
+      "source": "來源（可選）",
+      "difficulty": "難度"
+    },
+    "placeholders": {
+      "title": "例如：Python 之禪",
+      "source": "https://example.com/article",
+      "content": "在此貼上或輸入作為打字練習的文章內容。"
+    },
+    "buttons": {
+      "submit": "送交審核",
+      "submitting": "提交中...",
+      "draft": "儲存草稿",
+      "saving": "儲存中..."
+    },
+    "tips": {
+      "title": "投稿小貼士",
+      "length": "理想長度建議在 100 到 2000 字元之間。",
+      "suitability": "確保內容適合打字練習（避免過多的特殊字元）。",
+      "source": "提供來源連結有助於審核流程。",
+      "draft": "您可以隨時儲存草稿，稍後再回來編輯。",
+      "review": "我們的管理員會盡快審核您的投稿。"
+    },
+    "messages": {
+      "invalidForm": {
+        "title": "無效的表單",
+        "message": "請提供標題和至少 50 個字元的內容。"
+      },
+      "submitSuccess": {
+        "title": "投稿成功！",
+        "message": "您的文章已成功提交審核。感謝您的貢獻！"
+      },
+      "submitError": {
+        "title": "投稿失敗",
+        "message": "發生意外錯誤。請稍後再試。"
+      },
+      "draftSuccess": {
+        "title": "草稿已儲存！",
+        "message": "您的文章已儲存為草稿。"
+      },
+      "draftError": {
+        "title": "儲存失敗",
+        "message": "儲存草稿前，請先填寫標題和內容。"
+      },
+      "authError": {
+        "title": "需要驗證",
+        "message": "您必須登入才能投稿文章。"
+      }
+    },
+    "difficulty": { "easy": "簡單", "medium": "一般", "hard": "困難" },
+    "common": {
+      "characters": "字元",
+      "minimum": "至少",
+      "public": "公開此文章（所有用戶可見）",
+      "mySubmissions": "我的投稿"
+    }
+  },
+  "admin": {
+    "title": "系統管理",
+    "subtitle": "管理使用者、文章與系統設定。",
+    "stats": "統計資料",
+    "stats": {
+      "pending": "待審文章",
+      "approved": "已通過",
+      "users": "用戶總數",
+      "records": "紀錄總數"
+    },
+    "tabs": {
+      "pending": "待審",
+      "allArticles": "全部文章",
+      "users": "用戶",
+      "scores": "成績"
+    },
+    "sections": {
+      "pending": "待審文章",
+      "allArticles": "全部文章"
+    },
+    "search": { "articles": "搜尋文章..." },
+    "empty": {
+      "noArticles": "找不到文章",
+      "noUsers": "沒有用戶",
+      "noScores": "尚未載入成績"
+    },
+    "actions": {
+      "viewFull": "查看全文",
+      "edit": "編輯",
+      "load": "載入"
+    },
+    "common": { "actions": "操作", "by": "作者" },
+    "users": {
+      "title": "用戶",
+      "role": "角色",
+      "records": "紀錄",
+      "setRole": "設定角色",
+      "emailPlaceholder": "Email（不存在則建立）",
+      "roles": { "user": "一般用戶", "orgAdmin": "文章審核員", "superAdmin": "超級管理員" },
+      "roleUpdated": "角色已更新",
+      "roleUpdateFailed": "角色更新失敗"
+    },
+    "scores": {
+      "title": "編輯成績",
+      "userIdPlaceholder": "用戶 ID（UUID）"
+    }
+  },
+  "footer": {
+    "description": "進階多語言打字練習平台",
+    "links": "連結",
+    "documentation": "說明文件",
+    "api": "API參考",
+    "github": "GitHub"
+  },
+  "common": {
+    "loading": "載入中...",
+    "error": "錯誤",
+    "success": "成功",
+    "cancel": "取消",
+    "save": "儲存",
+    "delete": "刪除",
+    "edit": "編輯",
+    "view": "檢視",
+    "back": "返回",
+    "next": "下一個",
+    "previous": "上一個",
+    "search": "搜尋",
+    "filter": "篩選",
+    "sort": "排序",
+    "page": "頁面",
+    "of": "共",
+    "results": "結果"
+  }
+  ,
+  "meta": {
+    "title": "TypeFlow - 多語言打字練習平台",
+    "description": "以 WebSocket 驅動的即時回饋與完整分析，帶來流暢的打字體驗"
+  }
+  ,
+  "group": {
+    "title": "我的群組",
+    "subtitle": "每位用戶僅一個群組，所有成員皆可查看分數。",
+    "create": {
+      "title": "建立群組",
+      "desc": "開一個新群組並成為管理者。",
+      "placeholder": "群組名稱（例如：藍隊）",
+      "action": "建立"
+    },
+    "join": {
+      "title": "加入群組",
+      "desc": "輸入管理者提供的群組 ID。",
+      "placeholder": "請輸入群組 ID（UUID）",
+      "action": "加入"
+    },
+    "info": {
+      "group": "群組",
+      "role": "角色",
+      "groupId": "群組 ID"
+    },
+    "actions": { "copy": "複製", "leave": "離開群組" },
+    "invite": {
+      "title": "邀請成員",
+      "placeholder": "學生 Email（Gmail 或其他）",
+      "action": "邀請"
+    },
+    "leaderboard": {
+      "title": "群組排行榜",
+      "mode": "模式",
+      "modes": { "latest": "最新", "best": "最佳", "average": "平均" },
+      "empty": "還沒有任何分數"
+    },
+    "messages": { "copied": "群組 ID 已複製", "invited": "邀請成功" },
+    "errors": { "invite": "邀請失敗", "leave": "離開群組失敗" },
+    "confirm": { "leave": "確定要離開這個群組嗎？" }
+  }
+}

@@ -1,0 +1,92 @@
+TypeFlow Windows 啟動指令
+==========================
+
+⚠️ 檢測到 Docker Desktop 未運行！
+
+請依照以下步驟操作：
+
+步驟 1: 啟動 Docker Desktop
+---------------------------
+1. 按 Windows 鍵
+2. 搜索 "Docker Desktop"
+3. 點擊啟動
+4. 等待 Docker 圖標變為綠色（在系統托盤）
+
+如果未安裝 Docker Desktop:
+下載地址: https://www.docker.com/products/docker-desktop
+
+
+步驟 2: 確認 Docker 運行
+---------------------------
+在 PowerShell 中執行：
+docker --version
+
+應該看到類似：Docker version 28.x.x
+
+
+步驟 3: 啟動 TypeFlow（3種方式）
+---------------------------
+
+方式 A: 使用 Docker Compose（推薦）
+docker-compose -f docker-compose.windows.yml up -d
+
+
+方式 B: 使用原配置
+docker-compose up -d
+
+
+方式 C: 開發模式（本地運行）
+# 後端
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
+
+# 前端（新終端）
+cd frontend
+npm install
+npm run dev
+
+
+步驟 4: 驗證服務
+---------------------------
+前端: http://localhost:3000  （或 http://localhost:5173 如果用 npm run dev）
+後端: http://localhost:8000  （或 http://localhost:12014 如果用原配置）
+API文檔: http://localhost:8000/docs
+
+
+常用指令
+---------------------------
+# 查看服務狀態
+docker-compose -f docker-compose.windows.yml ps
+
+# 查看日誌
+docker-compose -f docker-compose.windows.yml logs -f
+
+# 停止服務
+docker-compose -f docker-compose.windows.yml down
+
+# 重啟服務
+docker-compose -f docker-compose.windows.yml restart
+
+
+問題排查
+---------------------------
+Q: Docker Desktop 無法啟動？
+A: 1. 確認已安裝
+   2. 重啟電腦
+   3. 以管理員身份運行
+
+Q: 埠號衝突？
+A: 修改 .env 文件中的埠號設定
+
+Q: 權限錯誤？
+A: 以管理員身份運行 PowerShell
+
+
+需要更詳細的說明？
+---------------------------
+查看文檔:
+- Windows開發環境指南.md
+- 快速啟動指南-Windows.md
+- 快速參考指南.md
+

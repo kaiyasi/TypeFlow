@@ -1,0 +1,13 @@
+# Backend-specific dockerignore
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+*.log
+.mypy_cache/
+.pytest_cache/
+alembic/*.pyc
+alembic/versions/*.pyc
+
