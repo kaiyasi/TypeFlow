@@ -2,7 +2,7 @@
 
 > **由 Serelix Studio 開發的打字練習與數據分析系統，整合 Web 即時練習、排行榜、投稿審核、教室與群組**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: KYL Open](https://img.shields.io/badge/License-KYL%20Open-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-v3.12%2B-blue.svg)](https://www.python.org/)
 [![Vue 3](https://img.shields.io/badge/Vue-3.x-green.svg)](https://vuejs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-latest-teal.svg)](https://fastapi.tiangolo.com/)
@@ -162,7 +162,7 @@ TypeFlow/
 
 ## :page_facing_up: 授權條款
 
-此專案採用 **MIT 授權條款** – 參見 [LICENSE](LICENSE)
+此專案採用 **KYL Open 授權條款** – 參見 [LICENSE](LICENSE)
 
 ---
 
@@ -193,3 +193,6 @@ TypeFlow/
 ---
 
 *TypeFlow by Serelix Studio — 多語言打字練習平台*
+
+
+See [LICENSING.md](LICENSING.md) for license scope, third-party exceptions, and earlier-version notices.
